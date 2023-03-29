@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樱花如梦</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button>关灯</button>
+    <script>
+        var btn = document.querySelector('button');
+        var flag = 0;
+        btn.addEventListener('click', function () {
+            if (flag == 0) {
+                document.body.style.background = '#000000';
+                btn.innerHTML = '开灯';
+                flag = 1;
+            } else {
+                document.body.style.background = '';
+                btn.innerHTML = '关灯';
+                flag = 0;
+            }
+        })</script>
+    <div class="header">
+        <audio controls="controls" autoplay="autoplay" loop=-1 >
+            <source src="Ariana Grande - One Last Time (Marc May Hartzon Remix).mp3" type="audio/mpeg" >
+            <!-- type="audio/mpeg" -->
+        </audio>
+        <div class="logo">
+            <h1>樱花如梦</h1>
+        </div>
+        <div class="nav">
+            <a href="1.html">首页</a>
+            <a href="#about">我的介绍</a>
+            <a href="#work">我的作品</a>
+            <a href="#like">我的爱好</a>
+            <a href="#contact">联系我</a>
+        </div>
+    </div>
+    <div class="banner">
+        <img src="https://img.51miz.com/Element/00/99/58/03/5b0976d0_E995803_9be83f52.jpg" alt="">
+        <!-- <div class="yinghua"></div>https://img.51miz.com/Element/00/99/58/03/5b0976d0_E995803_9be83f52.jpg -->
+    </div>
+    <!-- 标题 -->
+    <div class="title">
+        <h3>我的介绍</h3>
+    </div>
+    <!-- 我的介绍 -->
+    <div id="about">
+        <div class="about-img">
+            <img src="1 copy.jpg" alt="">
+        </div>
+        <div class="about-text">
+            <p>我叫黄小燕，是一名计算机与软件工程学院的计算机科学技术21级大数据处理1班的同学。</p>
+            <p>   我在个性上是一个比较诚实、乐观、热情，具有团队精神，踏实努力，有责任心的人；在生活中，偶尔很自律，
+                偶尔很随性，喜欢吃喝玩乐，爱和朋友一起玩儿；在学习中，踏实肯干，努力上进，会主动去参加学术方面的活动，
+                也愿意为了自己的目标而不懈努力。总之，在大学里，我会努力把自我培养成为一名社会所需要的人才。
+            </p>
+            <p> 大学时光，对我来说，是一个风华正茂，青春正好的日子。我觉得大学应该是恣意，张扬而热烈的！</p>
+            <p> 然而，韶华易逝，时光如梭，匆匆而去。</p>
+            <p> 回顾大学两年的学习生活，感触很深、收获颇丰，收获了一些朋友，认识了许多来自五湖四海的人，
+                勤勤恳恳地做过干事，举办过一些活动，也写过微信的推文，任劳任怨地当过部长，带着干事们一起成长......</p>
+            <p> 同时，我也掌握了一些专业知识，学了几门编程语言，C++，java,python等，获得过一些奖，
+                创想杯创意组一等奖，国家励志奖学金，校级共青团员，两次校三好等，锻炼了一定的能力，培养了自我各方面的素质和潜力。 </p>
+            <p> 当然，我也还存在很多不足之处，技术还不够好，但在接下来的两年里，希望我能够正视缺点和不足，不断的努力，使自我得到更大提高，使自己变得更加优秀。
+            </p>
+            <p>少年不惧岁月长，彼方尚有荣光在。道阻且长，行则将至；行而不辍，未来可期！</p>
+        </div>
+    </div>
+    <!-- 我的作品 -->
+    <div class="title">
+        <h3>我的作品</h3>
+    </div>
+    <div id="work">
+        <ul>
+            <li>
+                <img src="https://5b0988e595225.cdn.sohucs.com/images/20190309/cc0f869dce2b4676b2b8c49d8fb3fce2.jpeg"
+                    alt="">
+                <p>图片一</p>
+            </li>
+            <li>
+                <img src="https://www.xinhuanet.com/world/2017-02/17/4090826651537234901_11n.jpg" alt="">
+                <p>图片二</p>
+            </li>
+
+            <li>
+                <img src="https://5b0988e595225.cdn.sohucs.com/images/20200317/fbd54d31853b4b8682b213fd15bc3e0b.jpeg"
+                    alt="">
+                <p>图片三</p>
+            </li>
+            <li>
+                <img src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2023%2F0204%2Ff5d99d16j00rpk1ka009nd200fm008rg00fm008r.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+                    alt="">
+                <p>图片四</p>
+            </li>
+        </ul>
+    </div>
+    <div class="pic">
+        <p>轮播图</p>
+        <div class="pic_img">
+            <img src="3.jpg" alt="">
+            <img src="6.jpg" alt="">
+            <img src="5.jpg" alt="">
+            <img src="2.jpg" alt="">
+            <img src="7.jpg" alt="">
+        </div>
+       </div>
+       <div class="lun">
+        <ul id="bo"></ul>
+        <script>
+            window.onload = function () {
+                let timer=setInterval(get_next,2000)
+                let sz = new Array();
+                var cur_ul = document.getElementById("bo");
+                for (let i = 1; i <= 5; i++) {
+                    var cur_li = document.createElement("li");
+                    var cur_img = document.createElement("img");
+                    cur_img.src = i+ ".webp";
+                    cur_img.style.width = "400px";
+                    cur_img.style.height = "300px";
+                    cur_li.appendChild(cur_img);
+                    cur_ul.appendChild(cur_li);
+                    sz.push(cur_li);
+                    sz[sz.length - 1].style.left = "0px";
+                }
+                
+                 let pre_img=document.createElement("img");
+                pre_img.src="2.png";
+                pre_img.style.position="absolute";
+                pre_img.style.left=0;
+                pre_img.style.top=0;
+                pre_img.style.bottom=0;
+                pre_img.style.margin="auto";
+                pre_img.style.zIndex=100;
+                cur_ul.appendChild(pre_img);
+        
+                let next_img=document.createElement("img");
+                next_img.src="1.png";
+                next_img.style.position="absolute";
+                next_img.style.right=0;
+                next_img.style.top=0;
+                next_img.style.bottom=0;
+                next_img.style.margin="auto";
+                next_img.style.zIndex=100;
+                cur_ul.appendChild(next_img);
+                
+                pre_img.onclick=function(){
+                    clearInterval(timer);
+                    get_pre();
+                    timer=setInterval(get_next,2000)
+                }
+        
+                next_img.onclick=function(){
+                    clearInterval(timer);
+                    get_next();
+                    timer=setInterval(get_next,2000)
+                }
+        
+                let len = sz.length - 1;
+                sz[len - 2].style.left = "0px";
+                sz[len - 1].style.zIndex = 100;
+                sz[len - 1].style.left = "200px";
+                sz[len - 1].style.transform = "scale(1.3)";
+                sz[len].style.left = "400px";
+        
+                function get_pre() {
+                    let give_up = sz[0];
+                    sz.shift();
+                    sz.push(give_up);
+                    for (let i = 0; i < sz.length; i++) {
+                        sz[i].style.zIndex = i;
+                        sz[i].style.transform = "scale(1)"
+                    }
+                    sz[len - 2].style.left = "0px";
+                    sz[len - 1].style.zIndex = 100;
+                    sz[len - 1].style.left = "200px";
+                    sz[len - 1].style.transform = "scale(1.3)";
+                    sz[len].style.opacity=1;
+                    sz[len].style.left = "400px";
+                }
+                function get_next() {
+                    let give_up = sz[len];
+                    sz.pop();
+                    sz.unshift(give_up);
+                    for (let i = 0; i < sz.length; i++) {
+                        sz[i].style.zIndex = i;
+                        sz[i].style.transform = "scale(1)"
+                    }
+                    sz[len - 2].style.left = "0px";
+                    sz[len - 1].style.zIndex = 100;
+                    sz[len - 1].style.left = "200px";
+                    sz[len - 1].style.transform = "scale(1.3)";
+                    sz[len].style.opacity=1;
+                    sz[len].style.left = "400px";
+                }
+            }
+        </script>
+    </div>
+
+    <!-- 我的爱好 -->
+    <div class="title">
+        <h3 >我的爱好</h3>
+    </div>
+    <div id="like">
+    <span>看小说</span>
+        <a href="https://book.qq.com/book-detail/27423130">红楼梦</a>
+        <a href="https://www.qsw.la/book_82919/">云边有个小卖部</a>
+        <a href="https://www.qsw.la/book_14048/">致青春</a>
+        <a href="https://www.ppzuowen.com/book/chalijiushi/">查理九世</a>
+        <a href="http://www.ickoo.com.cn/book_1912.html">校服的裙摆</a>
+
+        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fss2.meipian.me%2Fusers%2F1623239%2F1faa6483e8f74701aa3b9cce30290a6d.gif%3Fmeipian-raw%2Fbucket%2Fivwen%2Fkey%2FdXNlcnMvMTYyMzIzOS8xZmFhNjQ4M2U4Zjc0NzAxYWEzYjljY2UzMDI5MGE2ZC5naWY%3D%2Fsign%2Fc394009392481c458140ef509ce5b8fe.jpg&refer=http%3A%2F%2Fss2.meipian.me&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1681811821&t=4a91fbfd5be451439bca3d4a4b14c501" 
+        alt=""  >
+       
+    <span>追剧</span>
+    
+        <a href="https://www.iqiyi.com/v_xkt6z3z798.html?vfm=2008_aldbd&fv=p_02_01">狂飙</a>
+        <a href="https://baike.baidu.com/item/%E6%98%9F%E8%90%BD%E5%87%9D%E6%88%90%E7%B3%96/24557434?fr=aladdin">星落凝成糖</a>
+        <a href="https://www.iqiyi.com/v_19ryk8nb98.html?vfm=2008_aldbd&fc=828fb30b722f3164&fv=p_02_01">怦然心动</a>
+        <a href="https://www.le.com/ptv/vplay/27576461.html?ch=baidu_ffdsj&from=baidu_so&site=baidu_all">三生三世十里桃花</a>
+        <a href="https://baike.baidu.com/item/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97%E3%80%82/19127928?fromtitle=%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97&fromid=19126915&fr=aladdin">你的名字</a>
+   
+    <img src="https://5b0988e595225.cdn.sohucs.com/images/20171218/9f3fba4ae0de4ff18e16f331ccdad916.gif" alt="" >
+    
+    <span>旅行</span>
+        <a href="https://baike.baidu.com/item/%E4%B9%9D%E5%AF%A8%E6%B2%9F%E5%9B%BD%E5%AE%B6%E7%BA%A7%E8%87%AA%E7%84%B6%E4%BF%9D%E6%8A%A4%E5%8C%BA/8762684?fromtitle=%E4%B9%9D%E5%AF%A8%E6%B2%9F&fromid=122560&fr=aladdin">九寨沟</a>
+        <a href="https://baike.baidu.com/item/%E9%83%BD%E6%B1%9F%E5%A0%B0/122963?fr=aladdin">都江堰</a>
+        <a href="https://baike.baidu.com/item/%E9%9D%92%E5%9F%8E%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA/1424090?fr=aladdin">青城山</a>
+        <a href="https://baike.baidu.com/item/%E8%A5%BF%E5%B2%AD%E9%9B%AA%E5%B1%B1/577837?fr=aladdin">西岭雪山</a>
+        <a href="https://baike.baidu.com/item/%E6%B4%9B%E5%B8%A6%E5%8F%A4%E9%95%87/4922912?fr=aladdin">洛带古镇</a>
+    
+    <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201712%2F13%2F20171213084635_Xtx83.thumb.1000_0.gif&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1681790742&t=0ec27e3a0ee2d120906129d4a9135559"
+     alt="" >
+    <span>运动</span>
+        <a href="https://baike.baidu.com/item/%E8%B7%B3%E7%BB%B3/697143?fr=aladdin">跳绳</a>
+        <a href="https://baike.baidu.com/item/%E8%B7%91%E6%AD%A5/4510250?fr=aladdin">跑步</a>
+        <a href="https://baike.baidu.com/item/%E8%B8%A2%E6%AF%BD/6724574?fr=aladdin">踢毽子</a>
+        <a href="https://baike.baidu.com/item/%E6%89%93%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9A%84%E6%8A%80%E5%B7%A7/4463076?fr=aladdin">打羽毛球</a>
+        <a href="https://www.baidu.com/sf/vsearch?pd=video&wd=%E6%89%93%E4%B9%92%E4%B9%93%E7%90%83&tn=vsearch&lid=945fba7700039005&ie=utf-8&rsv_pq=945fba7700039005&rsv_spt=5&rsv_bp=1&f=8&atn=index">打乒乓球</a>
+    <img src="https://5b0988e595225.cdn.sohucs.com/images/20171010/e4563463a33f4835b11e7ce57b722b50.gif" 
+    alt="" >
+    <span>美食</span>
+        <a href="https://baike.baidu.com/item/%E7%B3%96%E9%86%8B%E6%8E%92%E9%AA%A8/31447">糖醋排骨</a>
+        <a href="https://www.baidu.com/sf/vsearch?pd=video&wd=%E7%BA%A2%E7%83%A7%E8%82%89&tn=vsearch&lid=e1f05c950001516b&ie=utf-8&rsv_pq=e1f05c950001516b&rsv_spt=5&rsv_bp=1&f=8&atn=index">红烧肉</a>
+        <a href="https://baike.baidu.com/item/%E7%81%AB%E9%94%85/274015?fr=aladdin">火锅</a>
+        <a href="https://baike.baidu.com/item/%E7%83%A4%E8%82%89/871053">烤肉</a>
+        <a href="https://baike.baidu.com/item/%E5%86%92%E8%8F%9C/5246199?fr=aladdin">冒菜</a>
+     <img src="https://hbimg.b0.upaiyun.com/33ebafb7983828ad88be6c3b0cfa9acdfea451143b80d-BKijgy_fw658" alt="">
+    </div>
+    
+
+
+    <!-- 联系我 -->
+    <div class="title" id="contact">
+        <h3>联系我</h3>
+    </div>
+    <div class="contact">
+        <form>
+            <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201911%2F13%2F20191113184917_ueyof.thumb.1000_0.gif&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1681809403&t=43c5d079fd9e3f7b947efe53f4bc1038" alt="">
+            <input type="text" placeholder="请输入您的姓名">
+            <input type="text" placeholder="请留下您的联系方式">
+            <textarea cols="30" rows="10" placeholder="请留下您联系我的原因"></textarea>
+            <button>提交</button>
+<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202003%2F19%2F20200319230847_lgutm.gif&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1681808863&t=9625efd5e4d1791ef29830b78cff6997" alt="">
+        </form>
+    </div>
+    <div class="footer">
+        <p>此网页设计者：黄小燕</p>
+    </div>
+    <!-- <div class="yinghua"></div> -->
+</body>
+
+</html>
